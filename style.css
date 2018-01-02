@@ -1,0 +1,191 @@
+* {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box
+}
+.mdl-progress {
+  width: 100%;
+}
+.mdl-progress>.bar {
+  -webkit-transition: none;
+  transition: none;
+}
+.mdl-papa {
+  margin: 30px auto;
+  -webkit-transition: -webkit-box-align 1s;
+  transition: -webkit-box-align 1s;
+  transition: align-items 1s;
+  transition: align-items 1s, -webkit-box-align 1s, -ms-flex-align 1s;
+}
+.mdl-card {
+  overflow: hidden;
+  border-radius: 4px;
+}
+.mdl-card__supporting-text {
+  font-size: 80%;
+  width: 100%;
+  overflow: auto;
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+a {
+  text-decoration: none;
+}
+.fb-like > span {
+  vertical-align: middle !important;
+}
+.mdl-card-template {
+  display: none;
+}
+.mdl-button--icon {
+  border-radius: 2px;
+}
+.mdl-layout__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  min-height: 100vh;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+main .mdl-layout__content {
+  -webkit-box-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+}
+.mdl-badge.mdl-badge--overlap {
+  margin-left: -10px;
+  pointer-events: none;
+}
+.mdl-badge--custom {
+  opacity: 0;
+  display: -ms-flexbox;
+  display: -webkit-box;
+  display: flex;
+  -ms-flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-direction: row;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -ms-flex-pack: center;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -ms-flex-line-pack: center;
+  align-content: center;
+  -ms-flex-align: center;
+  -webkit-box-align: center;
+  align-items: center;
+  position: absolute;
+  top: -1em;
+  left: .75em;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+  font-weight: 600;
+  font-size: 12px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  transition: opacity .3s;
+  -webkit-transition: opacity .3s;
+}
+a.neo,
+.neo-animate {
+  padding: .34em .73em !important;
+  margin: -.34em -.73em !important;
+  z-index: 1;
+  display: inline-block;
+  position: relative;
+  border-radius: 2em !important;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+a.neo:not(.is-active) {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+a.is-active .mdl-badge--custom {
+  opacity: 1;
+  z-index: 5;
+}
+a.is-active {
+  background: #fff;
+  -webkit-transform: translateY(-6px) !important;
+  transform: translateY(-6px) !important;
+}
+.neo-animate {
+  background: #fff !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  z-index: 10 !important;
+  -webkit-transition: all 1s !important;
+  transition: all 1s !important;
+  opacity: 0;
+  display: inline-block !important;
+  -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2) !important;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2) !important;
+}
+.mdl-card {
+  -webkit-transition: -webkit-transform .3s, -webkit-box-shadow .3s;
+  transition: -webkit-transform .3s, -webkit-box-shadow .3s;
+  transition: transform .3s, box-shadow .3s;
+  transition: transform .3s, box-shadow .3s, -webkit-transform .3s, -webkit-box-shadow .3s;
+}
+.mdl-card:not(:first-of-type):hover {
+  -webkit-transform: translateY(-8px);
+  transform: translateY(-8px);
+  -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, .14), 0 5px 18px 0 rgba(0, 0, 0, .15), 0 7px 5px -1px rgba(0, 0, 0, .12);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, .14), 0 5px 18px 0 rgba(0, 0, 0, .15), 0 7px 5px -1px rgba(0, 0, 0, .12);
+}
+.mdl-card__title.has-image a:not(.external) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.mdl-card__supporting-text > img {
+  width: auto;
+  height: auto;
+  max-width: 30%;
+  max-height: 10em;
+  float: right;
+  margin: .5em 0 .5em 1em;
+  display: inline-block;
+}
+.mdl-card:hover h2 .mdl-badge--custom {
+  opacity: 1;
+}
+.reference-line {
+  height: 3px;
+  background: rgb(83, 109, 254) -webkit-gradient(linear, left top, right top, from(rgb(83, 109, 254)), to(rgb(244, 67, 54)));
+  background: rgb(83, 109, 254) linear-gradient(90deg, rgb(83, 109, 254), rgb(244, 67, 54));
+  opacity: 0;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+  position: absolute;
+  -webkit-transform-origin: 0 50%;
+  transform-origin: 0 50%;
+  z-index: 3;
+  pointer-events: none;
+}
+.mdl-card__supporting-text sup {
+  margin: -1em 0;
+  display: inline-block;
+}
+.mdl-menu {
+  clip: inherit;
+}
+.mdl-switch {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  padding-right: 28px;
+}
+.mdl-textfield {
+  padding: 0;
+  margin: 0 12px 0 0;
+  width: 3em;
+}
