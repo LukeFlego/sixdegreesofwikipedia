@@ -158,19 +158,6 @@ a.is-active {
 .mdl-card:hover h2 .mdl-badge--custom {
   opacity: 1;
 }
-.reference-line {
-  height: 3px;
-  background: rgb(83, 109, 254) -webkit-gradient(linear, left top, right top, from(rgb(83, 109, 254)), to(rgb(244, 67, 54)));
-  background: rgb(83, 109, 254) linear-gradient(90deg, rgb(83, 109, 254), rgb(244, 67, 54));
-  opacity: 0;
-  -webkit-transition: opacity .5s;
-  transition: opacity .5s;
-  position: absolute;
-  -webkit-transform-origin: 0 50%;
-  transform-origin: 0 50%;
-  z-index: 3;
-  pointer-events: none;
-}
 .mdl-card__supporting-text sup {
   margin: -1em 0;
   display: inline-block;
