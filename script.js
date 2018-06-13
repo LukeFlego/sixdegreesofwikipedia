@@ -1,3 +1,5 @@
+const pageURL = 'https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&redirects=1&prop=text&disabletoc=1&mainpage=1&page=';
+
 Array.prototype.extend = function (other_array) {
   /* you should include a test to check whether other_array really is an array */
   other_array.forEach(function (v) {
@@ -61,6 +63,10 @@ $(window).on('load', function () {
 
 
   function getWiki(origin, degrees) {
+
+    if (!origin.match(/^https:\/\/(\w\w\.)+wikipedia\.org\//)) {
+      origin = pageURL + origin;
+    }
 
     function formatLinks(string) {
       // Format relative anchors to be absolute
@@ -217,7 +223,7 @@ $(window).on('load', function () {
                 $('.neo-animate:last').css('opacity', 1);
               }, neoDelay);
 
-              getWiki("https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&redirects=1&prop=text&disabletoc=1&mainpage=1&page=" + currentAnchor.pathname.split('/wiki/')[1], degrees - 1);
+              getWiki(currentAnchor.pathname.split('/wiki/')[1], degrees - 1);
             });
           }
 
@@ -228,15 +234,16 @@ $(window).on('load', function () {
 
   if (random == true) {
     $.ajax({
-      url: "https://en.wikipedia.org/w/api.php?action=parse&format=json&origin=*&redirects=1&prop=text&disabletoc=1&mainpage=1&page=Wikipedia:Featured_articles",
+      url: pageURL + 'Wikipedia:Featured_articles',
       success: function (data) {
-        featuredArticles = $('tr:eq(2)', $(data.parse.text["*"])[0]).find('a[href*="\/wiki\/"]');
-        getWiki("https://en.wikipedia.org/w/api.php?action=parse&redirects=1&format=json&page=" + featuredArticles[Math.floor(Math.random() * featuredArticles.length)].pathname.split('/wiki/')[1], settings.degrees);
+        var featuredPage = $(data.parse.text["*"]);
+        featuredArticles = $(featuredPage).find('.featured_article_metadata a[href*="\/wiki\/"]');
+        getWiki(featuredArticles[Math.floor(Math.random() * featuredArticles.length)].pathname.split('/wiki/')[1], settings.degrees);
         random = true;
       }
     });
   } else {
-    getWiki("https://en.wikipedia.org/w/api.php?action=parse&format=json&page=Wikipedia:Today%27s_featured_article", settings.degrees);
+    getWiki('Wikipedia:Today%27s_featured_article', settings.degrees);
     random = false;
   }
 
