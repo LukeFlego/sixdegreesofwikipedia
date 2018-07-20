@@ -11,6 +11,9 @@ String.prototype.toProperCase = function () {
     return txt.charAt(0).toUpperCase() + txt.substr(1);
   });
 };
+String.prototype.tidy = function () {
+  return this.replace(/\s{2,}/g, '');
+}
 
 $(window).on('load', function () {
   var $card = $('.mdl-card-template')[0].innerHTML,
@@ -53,9 +56,18 @@ $(window).on('load', function () {
 
   mdlInput = function (text, input) {
     if (text == 'Random') {
-      return '<label class="mdl-switch mdl-js-switch mdl-js-ripple-effect"><input type="checkbox" class="mdl-switch__input" ' + (input === 'true' ? 'checked' : '') + '><span class="mdl-switch__label">' + text + '</span></label>';
+      let isChecked = input === 'true' ? 'checked' : '';
+      return `
+      <label class="mdl-switch mdl-js-switch mdl-js-ripple-effect">
+        <input type="checkbox" class="mdl-switch__input" ${isChecked}>
+        <span class="mdl-switch__label">${text}</span>
+      </label>`.tidy();
     } else {
-      return '<div class="mdl-textfield mdl-js-textfield"><input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" min="0" value="' + input + '"></div>' + text;
+      return `
+      <div class="mdl-textfield mdl-js-textfield">
+        <input class="mdl-textfield__input" type="number" pattern="-?[0-9]*(\.[0-9]+)?" min="0" value="${input}">
+      </div>
+      ${text}`.tidy();
     }
   };
 
@@ -105,10 +117,10 @@ $(window).on('load', function () {
         } else {
           var data = allData.parse,
             title = data.title,
-            summary = $(formatLinks(data.text["*"])).filter('.mw-parser-output').find('> p:first');
+            summary = $(formatLinks(data.text["*"])).filter('.mw-parser-output').find('> p:not(.mw-empty-elt):first');
           // Skip the pesky coordinates paragraph tag on location pages
           if (summary.html().indexOf('id="coordinates"') > -1) {
-            summary = $(formatLinks(data.text["*"])).filter('.mw-parser-output').find('> p:eq(2)');
+            summary = $(formatLinks(data.text["*"])).filter('.mw-parser-output').find('> p:not(.mw-empty-elt):eq(2)');
           }
 
           supportingText.html(summary);
@@ -204,7 +216,12 @@ $(window).on('load', function () {
               var currentAnchor = randomAnchor;
               $('.mdl-button.skip').remove();
 
-              $(currentAnchor).append('<span class="mdl-badge mdl-badge--overlap"><span class="mdl-badge--custom mdl-color--accent mdl-color-text--accent-contrast">' + ($('.mdl-card').length - 1) + '</span></span>');
+              let cardLength = $('.mdl-card').length - 1;
+
+              $(currentAnchor).append(`
+              <span class="mdl-badge mdl-badge--overlap">
+                <span class="mdl-badge--custom mdl-color--accent mdl-color-text--accent-contrast">${cardLength}</span>
+              </span>`.tidy());
               setTimeout(function () {
                 $(currentAnchor).addClass($(randomAnchor).attr('href').split('/wiki/')[1] + ' neo is-active mdl-shadow--4dp');
               }, 1);

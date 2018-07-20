@@ -2,13 +2,16 @@
   -webkit-box-sizing: border-box;
   box-sizing: border-box
 }
+
 .mdl-progress {
   width: 100%;
 }
+
 .mdl-progress>.bar {
   -webkit-transition: none;
   transition: none;
 }
+
 .mdl-papa {
   margin: 30px auto;
   -webkit-transition: -webkit-box-align 1s;
@@ -16,10 +19,12 @@
   transition: align-items 1s;
   transition: align-items 1s, -webkit-box-align 1s, -ms-flex-align 1s;
 }
+
 .mdl-card {
   overflow: hidden;
   border-radius: 4px;
 }
+
 .mdl-card__supporting-text {
   font-size: 80%;
   width: 100%;
@@ -28,18 +33,23 @@
   -ms-flex: 1;
   flex: 1;
 }
+
 a {
   text-decoration: none;
 }
-.fb-like > span {
+
+.fb-like>span {
   vertical-align: middle !important;
 }
+
 .mdl-card-template {
   display: none;
 }
+
 .mdl-button--icon {
   border-radius: 2px;
 }
+
 .mdl-layout__container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -50,15 +60,18 @@ a {
   -ms-flex-direction: column;
   flex-direction: column;
 }
+
 main .mdl-layout__content {
   -webkit-box-flex: 1;
   -ms-flex: 1;
   flex: 1;
 }
+
 .mdl-badge.mdl-badge--overlap {
   margin-left: -10px;
   pointer-events: none;
 }
+
 .mdl-badge--custom {
   opacity: 0;
   display: -ms-flexbox;
@@ -90,6 +103,7 @@ main .mdl-layout__content {
   transition: opacity .3s;
   -webkit-transition: opacity .3s;
 }
+
 a.neo,
 .neo-animate {
   padding: .34em .73em !important;
@@ -101,19 +115,23 @@ a.neo,
   -webkit-transition: all .3s;
   transition: all .3s;
 }
+
 a.neo:not(.is-active) {
   -webkit-box-shadow: none;
   box-shadow: none;
 }
+
 a.is-active .mdl-badge--custom {
   opacity: 1;
   z-index: 5;
 }
+
 a.is-active {
   background: #fff;
   -webkit-transform: translateY(-6px) !important;
   transform: translateY(-6px) !important;
 }
+
 .neo-animate {
   background: #fff !important;
   pointer-events: none !important;
@@ -126,18 +144,21 @@ a.is-active {
   -webkit-box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2) !important;
   box-shadow: 0 4px 5px 0 rgba(0, 0, 0, .14), 0 1px 10px 0 rgba(0, 0, 0, .12), 0 2px 4px -1px rgba(0, 0, 0, .2) !important;
 }
+
 .mdl-card {
   -webkit-transition: -webkit-transform .3s, -webkit-box-shadow .3s;
   transition: -webkit-transform .3s, -webkit-box-shadow .3s;
   transition: transform .3s, box-shadow .3s;
   transition: transform .3s, box-shadow .3s, -webkit-transform .3s, -webkit-box-shadow .3s;
 }
+
 .mdl-card:not(:first-of-type):hover {
   -webkit-transform: translateY(-8px);
   transform: translateY(-8px);
   -webkit-box-shadow: 0 10px 10px rgba(0, 0, 0, .14), 0 5px 18px 0 rgba(0, 0, 0, .15), 0 7px 5px -1px rgba(0, 0, 0, .12);
   box-shadow: 0 10px 10px rgba(0, 0, 0, .14), 0 5px 18px 0 rgba(0, 0, 0, .15), 0 7px 5px -1px rgba(0, 0, 0, .12);
 }
+
 .mdl-card__title.has-image a:not(.external) {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -146,7 +167,8 @@ a.is-active {
   -ms-flex-align: center;
   align-items: center;
 }
-.mdl-card__supporting-text > img {
+
+.mdl-card__supporting-text>img {
   width: auto;
   height: auto;
   max-width: 30%;
@@ -155,22 +177,27 @@ a.is-active {
   margin: .5em 0 .5em 1em;
   display: inline-block;
 }
+
 .mdl-card:hover h2 .mdl-badge--custom {
   opacity: 1;
 }
+
 .mdl-card__supporting-text sup {
   margin: -1em 0;
   display: inline-block;
 }
+
 .mdl-menu {
   clip: inherit;
 }
+
 .mdl-switch {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   padding-right: 28px;
 }
+
 .mdl-textfield {
   padding: 0;
   margin: 0 12px 0 0;
